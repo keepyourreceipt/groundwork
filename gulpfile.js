@@ -4,9 +4,11 @@ var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 
 /***********************************************
-Teamplte Files
+Template Files
 ***********************************************/
-gulp.task('template-files', function() {
+gulp.task('build-template-files', ['clean-template-files', 'copy-template-files']);
+
+gulp.task('copy-template-files', function() {
   return gulp.src([
     './app/*.php',
     './app/style.css'
@@ -34,9 +36,17 @@ gulp.task('clean-css', function () {
     .pipe(clean());
 });
 
+gulp.task('clean-template-files', function () {
+  return gulp.src([
+    './dist/*.php',
+    './dist/style.css'], {read: false})
+    .pipe(clean());
+});
+
 /***********************************************
 Build Tasks
 ***********************************************/
 gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['build-css'] );
+    gulp.watch( ['./app/*.php', './app/style.css'], ['build-template-files'] );
 });

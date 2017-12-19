@@ -1,0 +1,25 @@
+{
+  "name": "groundwork",
+  "version": "1.0.0",
+  "description": "Custom WordPress Theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keepyourreceipt/groundwork.git"
+  },
+  "author": "Michael Peterman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keepyourreceipt/groundwork/issues"
+  },
+  "homepage": "https://github.com/keepyourreceipt/groundwork#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-clean": "^0.3.2"
+  },
+  "dependencies": {}
+}

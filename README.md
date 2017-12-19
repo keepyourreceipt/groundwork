@@ -1,2 +1,2 @@
-# groundwork
+# Groundwork
 WordPress theme

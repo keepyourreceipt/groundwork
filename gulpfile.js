@@ -4,20 +4,20 @@ var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 
 /***********************************************
-Template Files
+Template files
 ***********************************************/
 gulp.task('build-template-files', ['clean-template-files', 'copy-template-files']);
 
 gulp.task('copy-template-files', function() {
   return gulp.src([
-    './app/*.php',
-    './app/style.css'
+    './app/**/*.php',
+    './app/*.css'
   ])
   .pipe(gulp.dest('./dist'));
 });
 
 /***********************************************
-CSS Files
+CSS files
 ***********************************************/
 gulp.task('build-css', ['clean-css', 'sass'] );
 
@@ -26,7 +26,6 @@ gulp.task('sass', function () {
     .pipe( sass().on( 'error', sass.logError ) )
     .pipe(gulp.dest('./dist/css'));
 });
-gulp.task('default', ['sass']);
 
 /***********************************************
 Housekeeping
@@ -39,14 +38,16 @@ gulp.task('clean-css', function () {
 gulp.task('clean-template-files', function () {
   return gulp.src([
     './dist/*.php',
-    './dist/style.css'], {read: false})
+    './dist/*.css'], {read: false})
     .pipe(clean());
 });
 
 /***********************************************
-Build Tasks
+Build tasks
 ***********************************************/
 gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['build-css'] );
     gulp.watch( ['./app/*.php', './app/style.css'], ['build-template-files'] );
 });
+
+gulp.task('default', ['build-template-files', 'build-css']);

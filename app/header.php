@@ -9,9 +9,10 @@
 
   <?php
     /***********************************************
-    Include elementor font support
+    Include elementor font and color support
     ***********************************************/
     get_template_part('inc/elementor', 'font-support');
+    get_template_part('inc/elementor', 'color-support');
   ?>
 
   <!-- Begin main menu -->

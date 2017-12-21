@@ -10,7 +10,7 @@ Add custom menu display locations
 ***********************************************/
 function register_menu_locations() {
   register_nav_menus(
-    array( 'main_menu_location' => __( 'Main Menu' ) ));
+    array( 'main_menu' => __( 'Main Menu' ) ));
 }
 add_action( 'init', 'register_menu_locations' );
 

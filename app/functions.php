@@ -3,7 +3,17 @@
 WordPress feature theme support
 ***********************************************/
 add_theme_support('menus');
-add_theme_support( 'custom-logo' );
+
+function theme_custom_logo() {
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 300,
+        'flex-height' => true,
+        'flex-width'  => true
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'theme_custom_logo' );
 
 /***********************************************
 Add custom menu display locations

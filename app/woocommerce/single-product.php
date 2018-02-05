@@ -21,7 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-
+<div class="breadcrumb-navigation">
+	<div class="container">
+		<div class="content">
+			<?php woocommerce_breadcrumb(); ?>
+		</div>
+	</div>
+</div>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.

@@ -4,7 +4,12 @@ WordPress feature theme support
 ***********************************************/
 add_theme_support('menus');
 add_theme_support('widgets');
+
+// Woocommerce support
 add_theme_support('woocommerce');
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
 
 function theme_custom_logo() {
     $defaults = array(

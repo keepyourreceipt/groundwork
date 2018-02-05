@@ -47,7 +47,7 @@ Build tasks
 ***********************************************/
 gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['build-css'] );
-    gulp.watch( ['./app/*.php', './app/style.css'], ['build-template-files'] );
+    gulp.watch( ['./app/**/*.php', './app/style.css'], ['build-template-files'] );
 });
 
 gulp.task('default', ['build-template-files', 'build-css']);

@@ -18,6 +18,12 @@ function theme_custom_logo() {
 add_action( 'after_setup_theme', 'theme_custom_logo' );
 
 /***********************************************
+Include custom woocommerce hooks and actions
+***********************************************/
+get_template_part('inc/woocommerce/product', 'hooks');
+
+
+/***********************************************
 Add widget areas / theme sidebars
 ***********************************************/
 add_action( 'widgets_init', 'groundwork_widgets_init' );

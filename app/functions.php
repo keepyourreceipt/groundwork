@@ -5,12 +5,6 @@ WordPress feature theme support
 add_theme_support('menus');
 add_theme_support('widgets');
 
-// Woocommerce support
-add_theme_support('woocommerce');
-add_theme_support( 'wc-product-gallery-zoom' );
-add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
-
 function theme_custom_logo() {
     $defaults = array(
         'height'      => 100,
@@ -22,11 +16,34 @@ function theme_custom_logo() {
 }
 add_action( 'after_setup_theme', 'theme_custom_logo' );
 
-/***********************************************
-Include custom woocommerce hooks and actions
-***********************************************/
-get_template_part('inc/woocommerce/product', 'hooks');
 
+/***********************************************
+Add woocommerce theme support
+***********************************************/
+// Check if woocommerce is active
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+  // Add theme support for woocommrece and product gallery
+  add_theme_support('woocommerce');
+  add_theme_support( 'wc-product-gallery-zoom' );
+  add_theme_support( 'wc-product-gallery-lightbox' );
+  add_theme_support( 'wc-product-gallery-slider' );
+
+  // Include woocommerce theme hooks and functions
+  get_template_part('inc/woocommerce/layout', 'hooks');
+  get_template_part('inc/woocommerce/checkout', 'hooks');
+  get_template_part('inc/woocommerce/product', 'hooks');
+}
+
+function get_woocommerce_category_image() {
+    if ( is_product_category() ) {
+	    global $wp_query;
+	    $cat = $wp_query->get_queried_object();
+	    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+	    $image = wp_get_attachment_url( $thumbnail_id );
+      return $image;
+	}
+}
 
 /***********************************************
 Add widget areas / theme sidebars

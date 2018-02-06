@@ -21,21 +21,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 } ?>
 
 <?php get_header( 'shop' ); ?>
-<div class="breadcrumb-navigation">
-	<div class="container">
-		<div class="content">
-			<?php woocommerce_breadcrumb(); ?>
-		</div>
-	</div>
-</div>
 
-<div class="product-archive-header">
-	<div class="container">
-		<div class="content">
-			<h1><?php woocommerce_page_title(); ?></h1>
+<?php if ( get_woocommerce_category_image() || has_post_thumbnail() ) { ?>
+	<?php
+		if ( has_post_thumbnail() ) {
+			$background_image_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+		} else {
+			$background_image_url = get_woocommerce_category_image();
+		}
+ ?>
+	<div class="product-archive-header has-image" style="background-image: url(<?php echo $background_image_url; ?>)">
+		<div class="container">
+			<div class="content">
+				<h1><?php woocommerce_page_title(); ?></h1>
+				<span><?php woocommerce_breadcrumb(); ?></span>
+			</div>
 		</div>
 	</div>
-</div>
+
+<?php } else { ?>
+
+	<div class="breadcrumb-navigation">
+		<div class="container">
+			<div class="content">
+				<?php woocommerce_breadcrumb(); ?>
+			</div>
+		</div>
+	</div>
+	<div class="product-archive-header">
+		<div class="container">
+			<div class="content">
+				<h1><?php woocommerce_page_title(); ?></h1>
+			</div>
+		</div>
+	</div>
+
+<?php } // end else ?>
 
 <div class="container product-archive">
 	<div class="content">

@@ -1,0 +1,127 @@
+//***********************************************
+// Global woocommerce styles
+//***********************************************
+.breadcrumb-navigation
+  background-color: #efefef
+  padding: 0.5em 0
+  margin-bottom: 1em
+
+  nav.woocommerce-breadcrumb
+    margin-bottom: 0
+
+.woocommerce-info
+  max-width: 1120px
+  margin: 0 auto
+  box-sizing: border-box
+
+//***********************************************
+// Single product and product archive
+//***********************************************
+.woocommerce
+  ul.products li.product,
+  .woocommerce-page ul.products li.product
+    width: 30.8%
+
+  .related.products
+    ul.products li.product,
+    .woocommerce-page ul.products li.product
+      width: 22.05%
+
+.product-archive-header
+  &.has-image
+    padding-top: 5em
+    padding-bottom: 5em
+    text-align: center
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    position: relative
+    color: #fff
+    margin-bottom: 2em
+
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: #000
+      opacity: 0.75
+
+    .content
+      position: relative
+
+.container
+  .content
+  &.product-archive
+    .content
+      display: flex
+      flex-direction: row-reverse
+      justify-content: flex-end
+
+      #container
+        width: 100%
+
+      #sidebar
+        align-self: baseline
+        width: 30%
+        background: #efefef
+        margin-right: 3.8%
+        padding: 10px 30px
+
+        ul
+          list-style: none
+          margin-left: 0
+          padding-left: 0
+
+//***********************************************
+// Shopping cart
+//***********************************************
+.woocommerce-cart
+  .main-menu
+    margin-bottom: 2em
+
+//***********************************************
+// Checkout page
+//***********************************************
+body.woocommerce-checkout
+  background: linear-gradient(90deg, #fff 50%, #eee 50%)
+
+  .main-menu
+    margin-bottom: 2em
+
+  form.woocommerce-checkout
+    display: flex
+
+    h3#order_review_heading
+      display: none
+
+    #customer_details,
+    #order_review
+      width: 50%
+
+    #customer_details
+      margin-right: 2em
+
+    #order_review
+      margin-left: 2em
+
+      &:before
+        content: "Review Order"
+        display: block
+        display: block
+        font-family: Roboto
+        font-weight: 600
+        margin: 1em 0 2.75em
+        font-size: 1.17em
+
+// https://gist.githubusercontent.com/agusmu/5962635/raw/e0a0b86e33dd955addd95f7dc9881e6fbbc94826/style.css
+.woocommerce #customer_details.col2-set .col-1, .woocommerce-page #customer_details.col2-set .col-1,
+.woocommerce #customer_details.col2-set .col-2, .woocommerce-page #customer_details.col2-set .col-2
+  clear: both
+  float: none !important
+  width: 100% !important
+  margin-right:0 !important
+  text-align: left
+  padding-bottom: 20px

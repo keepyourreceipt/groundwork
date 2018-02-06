@@ -6,7 +6,7 @@ var clean = require('gulp-clean');
 /***********************************************
 Template files
 ***********************************************/
-gulp.task('build-template-files', ['clean-template-files', 'copy-template-files']);
+gulp.task('build-template-files', ['clean-template-files', 'build-js', 'copy-template-files']);
 
 gulp.task('copy-template-files', function() {
   return gulp.src([
@@ -14,6 +14,19 @@ gulp.task('copy-template-files', function() {
     './app/*.css'
   ])
   .pipe(gulp.dest('./dist'));
+});
+
+
+/***********************************************
+JS files
+***********************************************/
+gulp.task('build-js', ['clean-js', 'copy-js-files']);
+
+gulp.task('copy-js-files', function() {
+  return gulp.src([
+    './app/js/**/*.js'
+  ])
+  .pipe(gulp.dest('./dist/js'));
 });
 
 /***********************************************
@@ -35,9 +48,15 @@ gulp.task('clean-css', function () {
     .pipe(clean());
 });
 
+gulp.task('clean-js', function () {
+  return gulp.src('./dist/js/**/*.js', {read: false})
+    .pipe(clean());
+});
+
 gulp.task('clean-template-files', function () {
   return gulp.src([
     './dist/*.php',
+    './dist/js/**/*.js',
     './dist/*.css'], {read: false})
     .pipe(clean());
 });
@@ -47,6 +66,7 @@ Build tasks
 ***********************************************/
 gulp.task('watch', function() {
     gulp.watch( './app/sass/**/*.sass', ['build-css'] );
+    gulp.watch( './app/js/**/*.js', ['build-js'] );
     gulp.watch( ['./app/**/*.php', './app/style.css'], ['build-template-files'] );
 });
 

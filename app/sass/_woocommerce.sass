@@ -9,6 +9,10 @@
   nav.woocommerce-breadcrumb
     margin-bottom: 0
 
+.single-product
+  .breadcrumb-navigation
+    margin-bottom: 2em
+
 .woocommerce-info
   max-width: 1120px
   margin: 0 auto
@@ -74,6 +78,125 @@
           list-style: none
           margin-left: 0
           padding-left: 0
+
+.single-product
+  table.variations
+    tr.attribute-color
+      display: table
+      margin-bottom: 30px
+
+      td
+        display: table-row
+
+        input
+          visibility: hidden
+          position: absolute
+
+          &[type=radio]
+            + label
+              border: solid #efefef 4px
+              opacity: 0.9
+
+            &:checked
+              + label
+                border: solid #999 4px
+                opacity: 1
+
+        &.value
+          div
+            display: inline-block
+            margin-right: 15px
+
+          label
+            font-size: 0
+            width: 25px
+            height: 25px
+            background-color: #efefef
+            display: inline-block
+            border-radius: 50%
+
+    a.reset_variations
+      display: block
+      margin-top: 5px
+
+  tr.attribute-size
+    display: table
+
+    td
+      display: table-row
+
+      input
+        visibility: hidden
+        position: absolute
+
+        &[type=radio]
+          &:checked
+            + label
+              background-color: #eee
+
+      &.value
+        div
+          display: inline-block
+          margin-right: 15px
+
+          label
+            width: 50px
+            height: 50px
+            text-align: center
+            line-height: 50px
+            border: solid #666 2px
+            display: inline-block
+
+  &.woocommerce
+    div.product
+      form.cart
+        div.quantity
+          float: none
+          border-radius: 500px
+          overflow: hidden
+          display: inline-block
+          height: 50px
+          vertical-align: middle
+          border: solid 1px #ddd
+
+          .quantity-decrease
+            width: 60px
+            height: 50px
+            background-color: #fff
+            display: inline-block
+            vertical-align: top
+            border-right-style: solid
+            border-right-width: 1px
+            border-right-color: #ddd
+
+          .quantity-increase
+            width: 60px
+            height: 50px
+            background-color: #fff
+            display: inline-block
+            vertical-align: top
+            border-left-style: solid
+            border-left-width: 1px
+            border-left-color: #ddd
+
+          input.qty
+            width: 80px
+            height: 50px
+            display: inline-block
+            border: none
+            float: none
+            vertical-align: top
+            -webkit-appearance: none
+            outline: none
+            margin-right: -14px
+            font-size: 1.25em
+
+        .button
+          display: block
+          margin-top: 60px
+          float: none
+
+
 
 //***********************************************
 // Shopping cart

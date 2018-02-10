@@ -81,7 +81,7 @@
 
 .single-product
   table.variations
-    tr.attribute-color
+    tr.attribute-pa_color
       display: table
       margin-bottom: 30px
 
@@ -119,7 +119,7 @@
       display: block
       margin-top: 5px
 
-  tr.attribute-size
+  tr.attribute-pa_size
     display: table
 
     td
@@ -226,8 +226,23 @@
 
         .button
           display: block
-          margin-top: 60px
+          margin-top: 40px
           float: none
+
+
+.woocommerce-widget-layered-nav
+  .woocommerce-widget-layered-nav-list
+    display: flex
+
+  a[href*="color"]
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    display: inline-block
+    margin-right: 5px
+
+    + span
+      display: none
 
 
 

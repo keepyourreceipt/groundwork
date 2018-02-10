@@ -22,12 +22,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php get_header( 'shop' ); ?>
 
-<?php if ( get_woocommerce_category_image() || has_post_thumbnail() ) { ?>
-	<?php
-		if ( has_post_thumbnail() ) {
-			$background_image_url = get_the_post_thumbnail_url(get_the_ID(),'full');
-		} else {
+<?php if ( get_woocommerce_category_image() || has_post_thumbnail() ) {
+		if ( get_woocommerce_category_image() ) {
 			$background_image_url = get_woocommerce_category_image();
+		} else {
+			$background_image_url = get_the_post_thumbnail_url(get_the_ID(),'full');
 		}
  ?>
 	<div class="product-archive-header has-image" style="background-image: url(<?php echo $background_image_url; ?>)">

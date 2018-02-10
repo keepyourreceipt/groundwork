@@ -3,13 +3,32 @@ jQuery(document).ready(function( $ ) {
   function themeInit() {
     assignProductColorRadios();
     fancyProductQuantityField();
+    woocommerceColorFilterWidget();
+  }
+
+  function woocommerceColorFilterWidget() {
+    var $colorFilterLinks = $('.woocommerce-widget-layered-nav a[href*="color"]');
+    if ( $colorFilterLinks.length ) {
+      $colorFilterLinks.each(function() {
+        var filterLink = $(this).attr('href');
+
+        // Get string value of href attr between the first _ and first &. This returns "color=[nameofcolor]"
+        var rawColor = filterLink.substring(filterLink.indexOf("_")+1,filterLink.indexOf("&"));
+
+        // Remove "color=" from string, remove spaces and hyphens from string
+        var color = rawColor.substring( rawColor.indexOf("=")+1 ).replace(/-|\s/g,"").toLowerCase();
+
+        // Assign string color value to link background color and string text from link tag
+        $(this).text("").css('background-color', color);
+      });
+    }
   }
 
   function assignProductColorRadios() {
-    var $colorVariationsTable = $('table.variations tr.attribute-color');
+    var $colorVariationsTable = $('table.variations tr.attribute-pa_color');
     if ( $colorVariationsTable.length ) {
       $colorVariationsTable.find('input[type="radio"]').each(function() {
-        var color = $(this).attr('value');
+        var color = $(this).attr('value').replace(/-|\s/g,"").toLowerCase();
         var radioLabel = $(this).siblings('label');
         radioLabel.css('background-color', color);
       });

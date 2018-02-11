@@ -22,9 +22,27 @@
 // Single product and product archive
 //***********************************************
 .woocommerce
+  ul.products,
+  .woocommerce-page ul.products
+    display: flex
+    flex-wrap: wrap
+
   ul.products li.product,
   .woocommerce-page ul.products li.product
     width: 30.8%
+    border: solid 1px $color-ui-light
+    padding: 15px
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    justify-content: space-between
+
+    .add_to_cart_button
+      width: 100%
+      box-sizing: border-box
+      line-height: 2em
+      text-align: center
 
   .related.products
     ul.products li.product,
@@ -64,6 +82,11 @@
 .container
   .content
   &.product-archive
+    select.orderby
+      height: 2em
+      font-size: 0.9em
+      border: none
+
     .content
       display: flex
       flex-direction: row-reverse
@@ -75,15 +98,19 @@
       #sidebar
         align-self: baseline
         width: 30%
-        background: #efefef
         margin-right: 3.8%
         padding: 10px 30px
+        border-right: solid 1px $color-ui-light
 
         ul
           list-style: none
           margin-left: 0
           padding-left: 0
 
+
+//***********************************************
+// Single product attribute and quantity select
+//***********************************************
 .single-product
   table.variations
     tr.attribute-pa_color
@@ -233,35 +260,6 @@
           display: block
           margin-top: 40px
           float: none
-
-.woocommerce
-  .woocommerce-widget-layered-nav
-    .woocommerce-widget-layered-nav-list
-      display: flex
-
-      .woocommerce-widget-layered-nav-list__item
-        a
-          border: solid $color-ui-dark 1px
-          background-color: $color-ui-light
-          display: inline-block
-          text-decoration: none
-          margin-right: 5px
-          line-height: 2em
-          padding: 0 10px
-
-          + span
-            display: none
-
-    &.wc-widget-color-filter
-      .woocommerce-widget-layered-nav-list__item
-        a
-          width: 25px
-          height: 25px
-          border-radius: 50%
-          display: inline-block
-          margin-right: 15px
-          padding: 0
-
 
 //***********************************************
 // Shopping cart

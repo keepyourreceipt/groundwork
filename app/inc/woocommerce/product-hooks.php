@@ -24,5 +24,5 @@ function action_woocommerce_after_main_content() {
 add_action( 'woocommerce_after_main_content', 'action_woocommerce_after_main_content', 10, 2 );
 
 
-/* Remove product meta */
+// Remove product meta
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );

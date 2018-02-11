@@ -3,7 +3,63 @@
 //***********************************************
 .widget
   &.woocommerce
-    margin-bottom: 2em
+    padding-bottom: 2em
+    padding-top: 1em
+    border-bottom: solid 1px $color-ui-light
 
-  .woocommerce-widget-layered-nav a:not([href*="color"])
-    
+    &:last-child
+      border-bottom: none
+
+    &.widget_price_filter
+      .price_slider
+        background-color: $color-ui-light
+
+      .ui-slider-range,
+      .ui-slider-handle
+        background-color: $color-ui-dark
+
+    &.widget_product_categories
+      a
+        text-decoration: none
+        color: $color-ui-dark
+
+        &:visited
+          color: $color-ui-dark
+
+
+//***********************************************
+// Woocommerce product filter widgets
+//***********************************************
+.woocommerce
+  .woocommerce-widget-layered-nav
+    .woocommerce-widget-layered-nav-list
+      display: flex
+
+      .woocommerce-widget-layered-nav-list__item
+        a
+          text-decoration: none
+          margin-right: 5px
+          width: 50px
+          height: 50px
+          text-align: center
+          line-height: 50px
+          border: solid $color-ui-dark 2px
+          display: inline-block
+          border-radius: 2px
+          color: $color-ui-dark
+
+          &:visited
+            color: $color-ui-dark
+
+          + span
+            display: none
+
+    &.wc-widget-color-filter
+      .woocommerce-widget-layered-nav-list__item
+        a
+          width: 25px
+          height: 25px
+          border-radius: 50%
+          display: inline-block
+          margin-right: 15px
+          padding: 0

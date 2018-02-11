@@ -22,11 +22,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php get_header( 'shop' ); ?>
 
-<?php if ( get_woocommerce_category_image() || has_post_thumbnail() ) {
-		if ( get_woocommerce_category_image() ) {
+<?php
+	if ( is_shop() ) {
+		$shop_page_id = get_page_by_path( 'shop' );
+		$background_image_url = get_the_post_thumbnail_url($shop_page_id,'full');
+	}
+
+	if ( get_woocommerce_category_image() || has_post_thumbnail() ) {
+	 	if ( get_woocommerce_category_image() ) {
 			$background_image_url = get_woocommerce_category_image();
 		} else {
-			$background_image_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+			$background_image_url = get_the_post_thumbnail_url($shop_page_id,'full');
 		}
  ?>
 	<div class="product-archive-header has-image" style="background-image: url(<?php echo $background_image_url; ?>)">

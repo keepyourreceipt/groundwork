@@ -1,41 +1,39 @@
 
 jQuery(document).ready(function( $ ) {
   function themeInit() {
-    assignProductColorRadios();
-    fancyProductQuantityField();
     woocommerceColorFilterWidget();
+    woocommerceSingleProductColorSelect();
+    woocommerceFancyProductQuantityField();
   }
 
   function woocommerceColorFilterWidget() {
-    var $colorFilterLinks = $('.woocommerce-widget-layered-nav a[href*="color"]');
+    var $colorFilterContainer = $('.wc-widget-color-filter');
+    var $colorFilterLinks = $colorFilterContainer.find('ul li a');
+
     if ( $colorFilterLinks.length ) {
       $colorFilterLinks.each(function() {
-        var filterLink = $(this).attr('href');
-
-        // Get string value of href attr between the first _ and first &. This returns "color=[nameofcolor]"
-        var rawColor = filterLink.substring(filterLink.indexOf("_")+1,filterLink.indexOf("&"));
-
-        // Remove "color=" from string, remove spaces and hyphens from string
-        var color = rawColor.substring( rawColor.indexOf("=")+1 ).replace(/-|\s/g,"").toLowerCase();
-
-        // Assign string color value to link background color and string text from link tag
-        $(this).text("").css('background-color', color);
+        var rawColorString = $(this).text();
+        var cleanColorString = rawColorString.replace(/-|\s/g,"").toLowerCase();
+        $(this).text("").css('background-color', cleanColorString).addClass('color-filter');
       });
     }
   }
 
-  function assignProductColorRadios() {
+  function woocommerceSingleProductColorSelect() {
     var $colorVariationsTable = $('table.variations tr.attribute-pa_color');
     if ( $colorVariationsTable.length ) {
       $colorVariationsTable.find('input[type="radio"]').each(function() {
+
+        // Remove hyphens from color attribute name
         var color = $(this).attr('value').replace(/-|\s/g,"").toLowerCase();
+
         var radioLabel = $(this).siblings('label');
         radioLabel.css('background-color', color);
       });
     }
   }
 
-  function fancyProductQuantityField() {
+  function woocommerceFancyProductQuantityField() {
     var $quantityContainer = $('.single-product input.qty');
     if ( $quantityContainer.length ) {
       $('<div class="quantity-decrease"></div>').insertBefore( $quantityContainer );

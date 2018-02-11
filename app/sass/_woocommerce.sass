@@ -56,6 +56,11 @@
     .content
       position: relative
 
+.archive.woocommerce
+  .content-area
+    width: 100%
+    margin-bottom: 100px
+
 .container
   .content
   &.product-archive
@@ -229,21 +234,33 @@
           margin-top: 40px
           float: none
 
+.woocommerce
+  .woocommerce-widget-layered-nav
+    .woocommerce-widget-layered-nav-list
+      display: flex
 
-.woocommerce-widget-layered-nav
-  .woocommerce-widget-layered-nav-list
-    display: flex
+      .woocommerce-widget-layered-nav-list__item
+        a
+          border: solid $color-ui-dark 1px
+          background-color: $color-ui-light
+          display: inline-block
+          text-decoration: none
+          margin-right: 5px
+          line-height: 2em
+          padding: 0 10px
 
-  a[href*="color"]
-    width: 30px
-    height: 30px
-    border-radius: 50%
-    display: inline-block
-    margin-right: 5px
+          + span
+            display: none
 
-    + span
-      display: none
-
+    &.wc-widget-color-filter
+      .woocommerce-widget-layered-nav-list__item
+        a
+          width: 25px
+          height: 25px
+          border-radius: 50%
+          display: inline-block
+          margin-right: 15px
+          padding: 0
 
 
 //***********************************************

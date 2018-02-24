@@ -1,5 +1,11 @@
 <?php
 /***********************************************
+Recommend / require theme plugins on activation
+***********************************************/
+require_once get_template_directory() . '/inc/tgm-plugin-activation/config-tgm-plugin-activation.php';
+
+
+/***********************************************
 WordPress feature theme support
 ***********************************************/
 add_theme_support('menus');

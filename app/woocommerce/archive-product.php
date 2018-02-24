@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php get_header( 'shop' ); ?>
 
 <?php
+
 	if ( is_shop() ) {
 		$shop_page_id = get_page_by_path( 'shop' );
 		$background_image_url = get_the_post_thumbnail_url($shop_page_id,'full');

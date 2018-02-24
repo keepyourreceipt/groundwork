@@ -18,8 +18,8 @@
   "homepage": "https://github.com/keepyourreceipt/groundwork#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
-    "gulp-clean": "^0.3.2"
+    "gulp-clean": "^0.4.0",
+    "gulp-sass": "^3.1.0"
   },
   "dependencies": {}
 }

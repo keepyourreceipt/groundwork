@@ -11,8 +11,8 @@
     /***********************************************
     Include elementor font and color support
     ***********************************************/
-    get_template_part('inc/elementor', 'font-support');
-    get_template_part('inc/elementor', 'color-support');
+    require_once get_template_directory() . '/inc/elementor/global-font-support.php';
+    require_once get_template_directory() . '/inc/elementor/global-color-support.php';
   ?>
 
   <!-- Begin main menu -->

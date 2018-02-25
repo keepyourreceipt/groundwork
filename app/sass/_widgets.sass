@@ -26,6 +26,32 @@
         &:visited
           color: $color-ui-dark
 
+//***********************************************
+// Elementor widgets
+//***********************************************
+.elementor-widget-container
+  ul.product_list_widget
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    padding-left: 0
+    margin-top: 3em
+    margin-bottom: 3em
+
+    li
+      width: 25%
+      padding: 1em
+
+      @media screen and ( max-width: $mobile-breakpoint )
+        width: 50%
+
+      div.star-rating
+        display: none
+
+      > a
+        display: flex
+        flex-direction: column
+
 
 //***********************************************
 // Woocommerce product filter widgets

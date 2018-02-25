@@ -4,6 +4,10 @@ Recommend / require theme plugins on activation
 ***********************************************/
 require_once get_template_directory() . '/inc/tgm-plugin-activation/config-tgm-plugin-activation.php';
 
+/***********************************************
+Include custom fields
+***********************************************/
+require_once get_template_directory() . '/inc/kirki/custom-fields.php';
 
 /***********************************************
 WordPress feature theme support

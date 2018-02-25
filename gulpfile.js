@@ -60,7 +60,7 @@ gulp.task('compile-sass', function () {
 Build tasks
 ***********************************************/
 gulp.task('watch', function() {
-    gulp.watch( './app/**/*.php', ['build-template-files'] );
+    gulp.watch( ['./app/**/*.php', './app/inc/**/*.php'], ['build-template-files'] );
     gulp.watch( './app/sass/**/*.sass', ['build-css-files'] );
     gulp.watch( './app/js/**/*.js', ['build-js-files'] );
 });

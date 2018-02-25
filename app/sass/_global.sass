@@ -4,3 +4,34 @@ body
   letter-spacing: $letter-spacing
   line-height: $line-height
   margin: 0
+
+i
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+
+footer
+  &.social-media
+    background-color: $color-ui-dark
+
+    .content
+      padding-top: 2em
+      padding-bottom: 2em
+      text-align: center
+
+      a
+        color: $color-ui-light
+        text-decoration: none
+        display: inline-block
+        margin: 0 5px
+        font-size: 2em
+
+        > i
+          font-family: fontawesome
+          font-style: normal
+
+  &.copyright
+    .content
+        text-align: center
+
+        p
+          font-size: 0.7em

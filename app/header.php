@@ -26,6 +26,7 @@
             </div>
           <?php } ?>
           <?php if ( has_nav_menu( 'main_menu' ) ) { ?>
+            <!-- Begin menu links -->
             <div class="links">
               <?php
                 wp_nav_menu( array(
@@ -35,6 +36,12 @@
                   'container_class' => ''
                 ));
               ?>
+            </div>
+            <!-- Begin mobile menu toggle -->
+            <div class="mobile-menu-toggle">
+              <span class="mobile-menu-toggle-bar one"></span>
+              <span class="mobile-menu-toggle-bar two"></span>
+              <span class="mobile-menu-toggle-bar three"></span>
             </div>
           <?php } ?>
         </div>

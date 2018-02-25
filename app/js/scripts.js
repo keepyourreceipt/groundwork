@@ -4,6 +4,7 @@ jQuery(document).ready(function( $ ) {
     woocommerceColorFilterWidget();
     woocommerceSingleProductColorSelect();
     woocommerceFancyProductQuantityField();
+    mobileMenu();
   }
 
   function woocommerceColorFilterWidget() {
@@ -65,6 +66,21 @@ jQuery(document).ready(function( $ ) {
         $qtyField.attr('value', updatedQtyFieldValue );
       });
     }
+  }
+
+  function mobileMenu() {
+
+    // On resize, stripe element styles appended by slideToggle
+    $(window).on('resize', function() {
+      if ( $(window).width() > 992 ) {
+        $('.links > .menu > li').attr('style', '');
+      }
+    });
+
+    // Toggle top level mobile nav menu on click
+    $('.mobile-menu-toggle').on('click', function() {
+      $('.links > .menu > li').slideToggle( 250 );
+    });
   }
 
   themeInit();

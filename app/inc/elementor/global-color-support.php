@@ -25,11 +25,6 @@
 ?>
 
 <style>
-  .main-menu .container .content ul li a,
-  .main-menu .container .content ul li a:visited {
-    color: <?php echo $text_color; ?>;
-  }
-
   .main-menu .container .content ul li a:hover {
     color: <?php echo $primary_color; ?>;
   }

@@ -4,7 +4,7 @@ jQuery(document).ready(function( $ ) {
     woocommerceColorFilterWidget();
     woocommerceSingleProductColorSelect();
     woocommerceFancyProductQuantityField();
-    mobileMenu();    
+    mobileMenu();
   }
 
   function woocommerceColorFilterWidget() {

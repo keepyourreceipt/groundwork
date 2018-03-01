@@ -150,4 +150,30 @@ Kirki::add_field( 'groundwork_kirki_config', array(
   'default'  => esc_attr__( '', 'groundwork' ),
   'priority' => 10,
 ) );
+
+
+/***********************************************************
+  * Navigation
+  ************************************************************/
+  Kirki::add_section( 'navigation', array(
+    'title'          => __( 'Navigation' ),
+    'description'    => __( 'Use this section to manage the navigation menu apperance', 'groundwork' ),
+    'panel'          => '', // Not typically needed.
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
+Kirki::add_field( 'groundwork_kirki_config', array(
+	'type'        => 'slider',
+	'settings'    => 'logo_size',
+	'label'       => esc_attr__( 'Logo size', 'textdomain' ),
+	'section'     => 'navigation',
+	'default'     => 42,
+	'choices'     => array(
+		'min'  => '40',
+		'max'  => '140',
+		'step' => '1',
+	),
+) );
 }

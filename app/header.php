@@ -29,7 +29,7 @@
         </div>
         <?php if ( get_theme_mod( 'phone_number') ) { ?>
           <div class="phone">
-            <span><?php echo get_theme_mod( 'phone_number'); ?></span>
+            <span>Phone: <?php echo get_theme_mod( 'phone_number'); ?></span>
           </div>
         <?php } ?>
       </div>
@@ -43,6 +43,7 @@
         <div class="content">
           <?php if ( has_custom_logo() ) { ?>
             <div class="logo">
+              <style>.main-menu .logo img { max-height: <?php echo get_theme_mod( 'logo_size' ) . "px;"; ?> }</style>
               <?php the_custom_logo(); ?>
             </div>
           <?php } ?>
